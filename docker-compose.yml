@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  redis1:
+    image: redis:7-alpine
+    container_name: redis_node1
+    ports:
+      - "6379:6379"
+    command: redis-server --save ""
+    restart: unless-stopped
+
+  redis2:
+    image: redis:7-alpine
+    container_name: redis_node2
+    ports:
+      - "6380:6379"
+    command: redis-server --save ""
+    restart: unless-stopped
+
+  redis3:
+    image: redis:7-alpine
+    container_name: redis_node3
+    ports:
+      - "6381:6379"
+    command: redis-server --save ""
+    restart: unless-stopped

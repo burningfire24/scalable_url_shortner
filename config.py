@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     rport1:int = 6379
     rport2:int = 6380
     rport3:int = 6381
+    ttl:int = 60
 
     model_config=SettingsConfigDict(
         env_file='.env',

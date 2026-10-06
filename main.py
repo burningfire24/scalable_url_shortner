@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
-from router import redisService 
+from router1 import redisService 
+from router2 import shortnerService
 
 app = FastAPI(
     title='URLshortner',
@@ -8,7 +9,8 @@ app = FastAPI(
 )
 
 
-app.include_router(redisService,prefix='/api/shortner', tags=['shortner'])
+app.include_router(redisService,prefix='/api/{version}/shortner', tags=['shortner'])
+app.include_router(shortnerService,tags=['redirection'])
 
 
 
